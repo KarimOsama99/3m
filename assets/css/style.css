@@ -70,8 +70,9 @@
 
 :root{
   /* --theme-color: #37AA67; */
+  /* --secondary-color: #0B1784; */
   --theme-color: #74B33F;
-  --secondary-color: #0B1784;
+  --secondary-color: #5A5A5A;
   --pink-color: #FFC0CB;
   --violet-color: #7F00FF;
   --crimson-color: #DC143C;
@@ -221,10 +222,10 @@ h1,h2,h3,h4,h5,h6{
   top: 0;
   width: 100%;
   z-index: 9999999;
-  background: var(--secondary-color);
+  background: var(--bs-body-color);
 }
 
-.preloader-close{
+/* .preloader-close{
   position: fixed;
   z-index: 99999999;
   font-size: 14px;
@@ -239,7 +240,7 @@ h1,h2,h3,h4,h5,h6{
   right: 30px;
   top: 30px;
   font-weight: 400;
-}
+} */
 
 .handle-preloader .animation-preloader {
   position: absolute;
@@ -308,7 +309,7 @@ h1,h2,h3,h4,h5,h6{
 
 .handle-preloader .animation-preloader .spinner{
   border: 3px solid #ffffff;
-  border-top-color: rgba(255, 255, 255, 0.3); 
+  border-top-color: var(--theme-color); 
 }
 
 /* AnimaciÃ³n del preloader */
@@ -380,6 +381,10 @@ img {
 
 .row{
   --bs-gutter-x: 30px;
+}
+
+.text-primary {
+  color: var(--theme-color) !important;
 }
 
 /** button **/
@@ -926,7 +931,10 @@ img {
   position: relative;
   max-width: 157px;
 }
-
+.main-header .header-lower .outer-box .logo-box .logo img{
+  /* filter: drop-shadow(2px 4px 6px black); */
+  transform: translateY(-5px);
+}
 
 /** language-switcher **/
 
@@ -1974,6 +1982,10 @@ button.ltr {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.main-footer .footer-top .top-inner .footer-logo{
+  width: 115px;
 }
 
 .main-footer .footer-top .top-inner .footer-menu{

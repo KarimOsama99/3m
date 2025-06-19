@@ -9,11 +9,11 @@
 		}
 	}
 
-	if ($(".preloader-close").length) {
-        $(".preloader-close").on("click", function(){
-            $('.loader-wrap').delay(200).fadeOut(500);
-        })
-    }
+	// if ($(".preloader-close").length) {
+    //     $(".preloader-close").on("click", function(){
+    //         $('.loader-wrap').delay(200).fadeOut(500);
+    //     })
+    // }
 	
 	//Update Header Style and Scroll to Top
 	function headerStyle() {
