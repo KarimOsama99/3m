@@ -1947,11 +1947,17 @@ button.ltr {
   top: 0px;
 }
 
+.events-block-one .inner-box .image-box {
+  height: 225px !important;
+}
 .news-block-one .inner-box .image-box{
   max-height: 210px !important;
 }
 .journey-block-one .inner-box .image-box{
   height: 250px !important;
+}
+.research-block-one .inner-box .image-box img{
+  height: 200px !important;
 }
 
 
