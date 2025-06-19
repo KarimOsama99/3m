@@ -1947,6 +1947,13 @@ button.ltr {
   top: 0px;
 }
 
+.news-block-one .inner-box .image-box{
+  max-height: 210px !important;
+}
+.journey-block-one .inner-box .image-box{
+  height: 250px !important;
+}
+
 
 /** main-footer **/
 
