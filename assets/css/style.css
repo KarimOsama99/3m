@@ -984,6 +984,8 @@ img {
 }
 
 .language-picker__button[aria-expanded=true]+.language-picker__dropdown {
+  padding-bottom: 25px;
+  border-radius: 3px;
   visibility: visible;
   opacity: 1;
   -webkit-transform: translateY(4px);
@@ -1071,6 +1073,13 @@ img {
 
 .language-picker__flag--english::before {
   background-image: url(../images/icons/flag-english.png);
+}
+
+.language-picker__flag--arabic::before {
+  background-image: url(../images/icons/flag-arabic.png);
+  background-position: center;
+  background-size: cover;
+  top: 10px !important;
 }
 
 .language-picker__flag--francais::before {
@@ -1577,12 +1586,12 @@ img {
 
 .mobile-menu .close-btn{
   position: absolute;
-  right: 25px;
-  top: 10px;
+  right: 30px;
+  top: 65px;
   line-height: 30px;
   width: 24px;
   text-align: center;
-  font-size: 18px;
+  font-size: 22px;
   color: #ffffff;
   cursor: pointer;
   z-index: 10;
