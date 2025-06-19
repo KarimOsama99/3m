@@ -341,13 +341,15 @@
 .banner-style-three .image-box{
   position: absolute;
   right: 0px;
-  bottom: 0px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .banner-style-three .image-box .support-box{
   position: absolute;
   left: -70px;
-  bottom: 125px;
+  /* bottom: 125px; */
+  bottom: 10px;
   width: 330px;
   background: #fff;
   border-radius: 120px;
