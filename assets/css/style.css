@@ -2276,6 +2276,20 @@ button.ltr {
   animation-name: bounceSlide
 }
 
+.whyUs {
+  display: flex;
+  justify-content: space-evenly;
+  overflow: hidden !important;
+}
+.whyUs li {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+}
+.service-style-two .image-box .image img {
+  height: 400px !important;
+}
 
 .tabs-box .tab{
   position:relative;
