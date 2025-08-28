@@ -126,7 +126,9 @@
   display: inline-block;
   font-size: 16px;
   line-height: 26px;
+  background-color: #eeeeee8b;
   color: var(--title-color);
+  margin-bottom: 10px;
   font-weight: 500;
   border-radius: 45px;
   padding: 5px 30px;
