@@ -247,6 +247,18 @@ h1,h2,h3,h4,h5,h6{
   z-index: 100;
 }
 
+.handle-preloader .animation-preloader img {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+}
+@media (min-width: 991px) {
+  .handle-preloader .animation-preloader img {
+    top: 37%;
+  }
+}
 .handle-preloader .animation-preloader .spinner{
   animation: spinner 1s infinite linear;
   border-radius: 50%;
