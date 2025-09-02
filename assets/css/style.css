@@ -2302,6 +2302,26 @@ button.ltr {
 .service-style-two .image-box .image img {
   height: 400px !important;
 }
+.banner-style-three .image-box .image img {
+  animation: move 3s infinite linear;
+}
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.sectorImg {
+  width: 200px;
+  height: 125px;
+  border-radius: 5px;
+}
 
 .tabs-box .tab{
   position:relative;
