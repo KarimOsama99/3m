@@ -1986,6 +1986,10 @@ button.ltr {
   height: 200px !important;
 }
 
+.events-block-one .inner-box .image-box img {
+  height: 100%;
+}
+
 
 /** main-footer **/
 
