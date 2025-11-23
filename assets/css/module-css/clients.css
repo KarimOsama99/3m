@@ -13,15 +13,25 @@
 
 .clients-section .clients-logo{
   position: relative;
-  display: block;
+  display: flex;
   text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.clients-section .clients-logo h4{
+  font-size: 20px;
+  color: #333333;
+  font-weight: 600;
+  margin: 0;
 }
 
 .clients-section .clients-logo img{
   position: relative;
   display: block;
   max-width: 100%;
-  width: auto;
+  width: 100px;
+  height: 50px;
   margin: 0 auto;
   opacity: 0.5;
   transition: all 500ms ease;
