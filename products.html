@@ -92,7 +92,7 @@
             border: 2px solid transparent;
             position: relative;
             overflow: hidden;
-            height: 100%;
+            min-height: 200px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -157,8 +157,40 @@
             font-size: 1.1em;
         }
 
+        .events-block {
+            margin-bottom: 30px;
+        }
+
         .hidden {
             display: none !important;
+        }
+
+        /* Empty State Message */
+        .empty-state-message {
+            text-align: center;
+            padding: 100px 20px;
+            width: 100%;
+        }
+
+        .empty-state-message i {
+            font-size: 80px;
+            color: #74B33F;
+            margin-bottom: 30px;
+            opacity: 0.3;
+        }
+
+        .empty-state-message h3 {
+            font-size: 28px;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .empty-state-message p {
+            font-size: 16px;
+            color: #666;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         @media (max-width: 768px) {
@@ -169,6 +201,14 @@
             .filter-tabs ul li button {
                 width: 100%;
                 max-width: 300px;
+            }
+
+            .empty-state-message h3 {
+                font-size: 22px;
+            }
+
+            .empty-state-message i {
+                font-size: 60px;
             }
         }
     </style>
@@ -285,7 +325,6 @@
                     <!-- Filter Tabs -->
                     <div class="filter-tabs">
                         <ul id="filter-buttons">
-                            <li><button class="active" data-filter="*">All Products</button></li>
                             <li><button data-filter=".alcohols">Alcohols</button></li>
                             <li><button data-filter=".glycol-ethers">Glycol Ethers</button></li>
                             <li><button data-filter=".glycols">Glycols</button></li>
@@ -301,6 +340,13 @@
                             <li><button data-filter=".polymers">Polymers</button></li>
                             <li><button data-filter=".other">Other Chemicals</button></li>
                         </ul>
+                    </div>
+
+                    <!-- Empty State Message -->
+                    <div id="empty-state" class="empty-state-message">
+                        <i class="fas fa-flask"></i>
+                        <h3>Select a Category</h3>
+                        <p>Please choose a product category from the options above to view our chemical products</p>
                     </div>
 
                     <div class="row clearfix" id="products-container"></div>
@@ -374,10 +420,10 @@
                                         <a href="mailto:Sales@3m-chem.com">Sales@3m-chem.com</a>
                                     </li>
                                     <li>
-                                        <a href="mailto:import@3m-chem.com">import@3m-chem.com</a>
+                                        <a href="mailto:import@3m-chem.com">Import@3m-chem.com</a>
                                     </li>
                                     <li>
-                                        <a href="mailto:export@3m-chem.com">export@3m-chem.com</a>
+                                        <a href="mailto:export@3m-chem.com">Export@3m-chem.com</a>
                                     </li>
                                 </ul>
                             </div>
@@ -393,14 +439,17 @@
                             </p>
                         </div>
                         <ul class="social-links">
-                            <li><h4>Follow Us On</h4></li>
-                            <li>
-                                <a href="https://www.facebook.com/profile.php?id=61579823973448" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/3m-chemicals-group-company-773b88399/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            </li>
-                        </ul>
+                  <li><h4>Follow Us On</h4></li>
+                  <li>
+                      <a href="https://www.facebook.com/profile.php?id=61579823973448" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                      <a href="https://www.linkedin.com/in/3m-chemicals-group-company-773b88399/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+                  <li>
+                      <a href="https://wa.me/message/4TPLWG6YEILBE1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                  </li>
+              </ul>
                     </div>
                 </div>
             </div>
@@ -554,6 +603,7 @@
         };
 
         const container = document.getElementById('products-container');
+        const emptyState = document.getElementById('empty-state');
         let allProducts = [];
 
         // Generate products HTML
@@ -568,45 +618,49 @@
 
         // Render products
         allProducts.forEach((product, index) => {
-            const delay = (index % 12) * 100;
             const productHTML = `
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-3 events-block ${product.category}">
-                    <div class="wow fadeInUp animated" 
-                         data-wow-delay="${delay}ms" 
-                         data-wow-duration="1500ms">
-                        <div class="product-card-no-image">
-                            <h3 class="product-name-main">${product.name}</h3>
-                            <div class="product-category-badge">${categoryNames[product.category]}</div>
-                            <div class="product-availability">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Available for Shipping</span>
-                            </div>
-                        </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 events-block ${product.category}">
+                    <div class="product-card-no-image">
+                        <h3 class="product-name-main">${product.name}</h3>
+                        <div class="product-category-badge">${categoryNames[product.category]}</div>
+                        <!-- <div class="product-availability">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Available for Shipping</span>
+                        </div> -->
                     </div>
                 </div>
             `;
             container.innerHTML += productHTML;
         });
 
+        // Hide all products initially
+        $('#products-container').hide();
+
         // Initialize Isotope
         var $grid = $('#products-container').isotope({
             itemSelector: '.events-block',
             layoutMode: 'fitRows',
-            percentPosition: true
+            percentPosition: true,
+            transitionDuration: '0.3s'
         });
 
         // Filter buttons
         $('#filter-buttons button').on('click', function() {
             var filterValue = $(this).attr('data-filter');
-            $grid.isotope({ filter: filterValue });
+            
+            // Hide empty state and show products container
+            $('#empty-state').fadeOut(200);
+            $('#products-container').fadeIn(300, function() {
+                $grid.isotope({ filter: filterValue });
+            });
             
             $('#filter-buttons button').removeClass('active');
             $(this).addClass('active');
         });
 
-        // Reinitialize WOW after filtering
+        // Smooth transition complete
         $grid.on('arrangeComplete', function() {
-            new WOW().init();
+            // Transition complete
         });
     </script>
 </body>

@@ -34,6 +34,7 @@
     <link href="assets/css/style.css" rel="stylesheet" />
     <link href="assets/css/module-css/page-title.css" rel="stylesheet" />
     <link href="assets/css/module-css/about.css" rel="stylesheet" />
+    <link href="assets/css/module-css/funfact.css" rel="stylesheet" />
     <link href="assets/css/module-css/feature.css" rel="stylesheet" />
     <link href="assets/css/module-css/research.css" rel="stylesheet" />
     <link href="assets/css/module-css/working.css" rel="stylesheet" />
@@ -96,10 +97,14 @@
             border: 2px solid transparent;
             position: relative;
             overflow: hidden;
-            height: 100%;
+            min-height: 180px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+        }
+        
+        .events-block {
+            margin-bottom: 30px;
         }
 
         .product-card-export::before {
@@ -165,6 +170,34 @@
             display: none !important;
         }
 
+        /* Empty State Message */
+        .empty-state-message {
+            text-align: center;
+            padding: 100px 20px;
+            width: 100%;
+        }
+
+        .empty-state-message i {
+            font-size: 80px;
+            color: #74B33F;
+            margin-bottom: 30px;
+            opacity: 0.3;
+        }
+
+        .empty-state-message h3 {
+            font-size: 28px;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .empty-state-message p {
+            font-size: 16px;
+            color: #666;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
         @media (max-width: 768px) {
             .filter-tabs ul {
                 flex-direction: column;
@@ -173,6 +206,14 @@
             .filter-tabs ul li button {
                 width: 100%;
                 max-width: 300px;
+            }
+
+            .empty-state-message h3 {
+                font-size: 22px;
+            }
+
+            .empty-state-message i {
+                font-size: 60px;
             }
         }
     </style>
@@ -286,7 +327,7 @@
                             <div class="image_block_two">
                                 <div class="image-inner mr_30 pr_120">
                                     <figure class="image">
-                                        <img src="assets/images/ch/3m.jpg" alt="" />
+                                        <img src="assets/images/ch/export.jfif" alt="" />
                                     </figure>
                                 </div>
                             </div>
@@ -329,302 +370,67 @@
                 </div>
             </section>
 
-            <!-- research-section -->
-            <!-- <section class="gallery-section pb_120">
-                <div class="auto-container">
-                    <div class="sec-title centred mb_70 sec-title-animation animation-style2">
-                        <span class="sub-title mb_20 title-animation">Exportation</span>
-                        <h2 class="title-animation">What We Export !</h2>
+            <!-- funfact-style-two -->
+        <section class="funfact-style-two pt_130 pb_120 mb_90">
+          <div
+            class="bg-layer parallax-bg"
+            data-parallax='{"y": 100}'
+            style="
+              background-image: url(assets/images/background/funfact-bg-2.jpg);
+            "
+          ></div>
+          <div class="pattern-layer">
+            <div
+              class="pattern-1"
+              style="background-image: url(assets/images/shape/shape-28.png)"
+            ></div>
+            <div
+              class="pattern-2"
+              style="background-image: url(assets/images/shape/shape-29.png)"
+            ></div>
+          </div>
+          <div class="auto-container">
+            <div class="row clearfix">
+              <div class="col-lg-4 col-md-6 col-sm-12 funfact-block">
+                <div class="funfact-block-one">
+                  <div class="inner-box">
+                    <div class="icon-box"><i class="fal fa-globe"></i></div>
+                    <div class="count-outer count-box">
+                      <span class="odometer" data-count="25">00</span
+                      ><span>+</span>
                     </div>
-                    <div class="sortable-masonry">
-                        <div class="filters centred mb_50">
-                            <ul class="filter-tabs filter-btns clearfix">
-                                <li class="active filter" data-role="button" data-filter=".all">All</li>
-                                <li class="filter" data-role="button" data-filter=".oil">Oil & Gas field</li>
-                                <li class="filter" data-role="button" data-filter=".soap">Soap & Detergents</li>
-                                <li class="filter" data-role="button" data-filter=".paints">Paints & lacquers</li>
-                                <li class="filter" data-role="button" data-filter=".inks">Printing inks & Packaging</li>
-                                <li class="filter" data-role="button" data-filter=".chemical">Chemical agriculture materials and fertilizers</li>
-                                <li class="filter" data-role="button" data-filter=".water">Water Treatment</li>
-                            </ul>
-                        </div>
-                        <div class="items-container row clearfix">
-                            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all paints oil physics tech">
-                                <div class="research-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="overlay-image">
-                                                <img src="assets/images/ch/methanol.jpg" alt="" />
-                                            </figure>
-                                            <figure class="image">
-                                                <img src="assets/images/ch/methanol.jpg" alt="" />
-                                            </figure>
-                                        </div>
-                                        <div class="text-box">
-                                            <h3><a href="javascript:;">Methanol Applications</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all soap chemistry material">
-                                <div class="research-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="overlay-image">
-                                                <img src="assets/images/ch/hypochlor.jpeg" alt="" />
-                                            </figure>
-                                            <figure class="image">
-                                                <img src="assets/images/ch/hypochlor.jpeg" alt="" />
-                                            </figure>
-                                        </div>
-                                        <div class="text-box">
-                                            <h3><a href="javascript:;">Sodium Hypochlorite 12%</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all chemistry oil biology tech">
-                                <div class="research-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="overlay-image">
-                                                <img src="assets/images/ch/chlor.jpg" alt="" />
-                                            </figure>
-                                            <figure class="image">
-                                                <img src="assets/images/ch/chlor.jpg" alt="" />
-                                            </figure>
-                                        </div>
-                                        <div class="text-box">
-                                            <h3><a href="javascript:;">Chlorine Gas 99%</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all chemistry water oil soap biology tech">
-                                <div class="research-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="overlay-image">
-                                                <img src="assets/images/ch/soda.jpg" alt="" />
-                                            </figure>
-                                            <figure class="image">
-                                                <img src="assets/images/ch/soda.jpg" alt="" />
-                                            </figure>
-                                        </div>
-                                        <div class="text-box">
-                                            <h3><a href="javascript:;">Caustic Soda Flakes / Liquid</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all soap physics biology tech">
-                                <div class="research-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="overlay-image">
-                                                <img src="assets/images/ch/nitric.webp" alt="" />
-                                            </figure>
-                                            <figure class="image">
-                                                <img src="assets/images/ch/nitric.webp" alt="" />
-                                            </figure>
-                                        </div>
-                                        <div class="text-box">
-                                            <h3><a href="javascript:;">Nitric Acid 68%</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all chemistry soap biology tech">
-                                <div class="research-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="overlay-image">
-                                                <img src="assets/images/ch/laury.jpg" alt="" />
-                                            </figure>
-                                            <figure class="image">
-                                                <img src="assets/images/ch/laury.jpg" alt="" />
-                                            </figure>
-                                        </div>
-                                        <div class="text-box">
-                                            <h3><a href="javascript:;">Sodium Lauryl Ether Sulphate 70%</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all soap oil biology tech">
-                                <div class="research-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="overlay-image">
-                                                <img src="assets/images/ch/hcl.png" alt="" />
-                                            </figure>
-                                            <figure class="image">
-                                                <img src="assets/images/ch/hcl.png" alt="" />
-                                            </figure>
-                                        </div>
-                                        <div class="text-box">
-                                            <h3><a href="javascript:;">Hydrochloric Acid Applications</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all chemistry chemical soap biology tech">
-                                <div class="research-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="overlay-image">
-                                                <img src="assets/images/ch/salfuric.jpg" alt="" />
-                                            </figure>
-                                            <figure class="image">
-                                                <img src="assets/images/ch/salfuric.jpg" alt="" />
-                                            </figure>
-                                        </div>
-                                        <div class="text-box">
-                                            <h3><a href="javascript:;">Sulfuric Acid Applications</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all chemistry chemical biology tech">
-                                <div class="research-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="overlay-image">
-                                                <img src="assets/images/ch/urea.jfif" alt="" />
-                                            </figure>
-                                            <figure class="image">
-                                                <img src="assets/images/ch/urea.jfif" alt="" />
-                                            </figure>
-                                        </div>
-                                        <div class="text-box">
-                                            <h3><a href="javascript:;">Urea 46%</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all paints chemical biology tech">
-                                <div class="research-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="overlay-image">
-                                                <img src="assets/images/ch/white.jpg" alt="" />
-                                            </figure>
-                                            <figure class="image">
-                                                <img src="assets/images/ch/white.jpg" alt="" />
-                                            </figure>
-                                        </div>
-                                        <div class="text-box">
-                                            <h3><a href="javascript:;">White Spirit</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all paints chemical biology tech">
-                                <div class="research-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="overlay-image">
-                                                <img src="assets/images/ch/xylene.webp" alt="" />
-                                            </figure>
-                                            <figure class="image">
-                                                <img src="assets/images/ch/xylene.webp" alt="" />
-                                            </figure>
-                                        </div>
-                                        <div class="text-box">
-                                            <h3><a href="javascript:;">Xylene</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all inks biology tech">
-                                <div class="research-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="overlay-image">
-                                                <img src="assets/images/ch/ethanol.jpg" alt="" />
-                                            </figure>
-                                            <figure class="image">
-                                                <img src="assets/images/ch/ethanol.jpg" alt="" />
-                                            </figure>
-                                        </div>
-                                        <div class="text-box">
-                                            <h3><a href="javascript:;">Ethanol</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all paints physics biology tech">
-                                <div class="research-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="overlay-image">
-                                                <img src="assets/images/ch/calcium.png" alt="" />
-                                            </figure>
-                                            <figure class="image">
-                                                <img src="assets/images/ch/calcium.png" alt="" />
-                                            </figure>
-                                        </div>
-                                        <div class="text-box">
-                                            <h3><a href="javascript:;">Calcium Carbonate</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all chemistry water biology tech">
-                                <div class="research-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="overlay-image">
-                                                <img src="assets/images/ch/aluminium.jfif" alt="" />
-                                            </figure>
-                                            <figure class="image">
-                                                <img src="assets/images/ch/aluminium.jfif" alt="" />
-                                            </figure>
-                                        </div>
-                                        <div class="text-box">
-                                            <h3><a href="javascript:;">Aluminum Sulphate Sold /Liquid</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all chemistry chemical biology tech">
-                                <div class="research-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="overlay-image">
-                                                <img src="assets/images/ch/phosphoric.jpg" alt="" />
-                                            </figure>
-                                            <figure class="image">
-                                                <img src="assets/images/ch/phosphoric.jpg" alt="" />
-                                            </figure>
-                                        </div>
-                                        <div class="text-box">
-                                            <h3><a href="javascript:;">Phosphoric Acid 52%</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 masonry-item small-column all chemistry paints biology tech">
-                                <div class="research-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="overlay-image">
-                                                <img src="assets/images/ch/styrene.webp" alt="" />
-                                            </figure>
-                                            <figure class="image">
-                                                <img src="assets/images/ch/styrene.webp" alt="" />
-                                            </figure>
-                                        </div>
-                                        <div class="text-box">
-                                            <h3><a href="javascript:;">Styrene Monomer</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <p>Exportation Countries</p>
+                  </div>
                 </div>
-            </section> -->
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12 funfact-block">
+                <div class="funfact-block-one">
+                  <div class="inner-box">
+                    <div class="icon-box"><i class="icon-10"></i></div>
+                    <div class="count-outer count-box">
+                      <span class="odometer" data-count="50">00</span
+                      ><span>+</span>
+                    </div>
+                    <p>Our Products</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12 funfact-block">
+                <div class="funfact-block-one">
+                  <div class="inner-box">
+                    <div class="icon-box"><i class="icon-11"></i></div>
+                    <div class="count-outer count-box">
+                      <span class="odometer" data-count="99">00</span
+                      ><span>%</span>
+                    </div>
+                    <p>Products Quality</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- funfact-style-two end -->
 
             <!-- Main Exporting Products Section -->
             <section class="events-section events-page-section pb_120">
@@ -637,7 +443,6 @@
                     <!-- Filter Tabs -->
                     <div class="filter-tabs">
                         <ul id="export-filter-buttons">
-                            <li><button class="active" data-filter="*">All Products</button></li>
                             <li><button data-filter=".oil-gas">Oil & Gas Field</button></li>
                             <li><button data-filter=".soap-detergents">Soap & Detergents</button></li>
                             <li><button data-filter=".paints-lacquers">Paints & Lacquers</button></li>
@@ -645,6 +450,13 @@
                             <li><button data-filter=".agriculture">Chemical Agriculture & Fertilizers</button></li>
                             <li><button data-filter=".water-treatment">Water Treatment</button></li>
                         </ul>
+                    </div>
+
+                    <!-- Empty State Message -->
+                    <div id="empty-state" class="empty-state-message">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Select a Category</h3>
+                        <p>Please choose a product category from the options above to view our export products</p>
                     </div>
 
                     <div class="row clearfix" id="export-products-container"></div>
@@ -717,10 +529,10 @@
                                         <a href="mailto:Sales@3m-chem.com">Sales@3m-chem.com</a>
                                     </li>
                                     <li>
-                                        <a href="mailto:import@3m-chem.com">import@3m-chem.com</a>
+                                        <a href="mailto:import@3m-chem.com">Import@3m-chem.com</a>
                                     </li>
                                     <li>
-                                        <a href="mailto:export@3m-chem.com">export@3m-chem.com</a>
+                                        <a href="mailto:export@3m-chem.com">Export@3m-chem.com</a>
                                     </li>
                                 </ul>
                             </div>
@@ -736,14 +548,17 @@
                             </p>
                         </div>
                         <ul class="social-links">
-                            <li><h4>Follow Us On</h4></li>
-                            <li>
-                                <a href="https://www.facebook.com/profile.php?id=61579823973448" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/3m-chemicals-group-company-773b88399/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            </li>
-                        </ul>
+                  <li><h4>Follow Us On</h4></li>
+                  <li>
+                      <a href="https://www.facebook.com/profile.php?id=61579823973448" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                      <a href="https://www.linkedin.com/in/3m-chemicals-group-company-773b88399/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+                  <li>
+                      <a href="https://wa.me/message/4TPLWG6YEILBE1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                  </li>
+              </ul>
                     </div>
                 </div>
             </div>
@@ -850,6 +665,7 @@
         };
 
         const container = document.getElementById('export-products-container');
+        const emptyState = document.getElementById('empty-state');
         let allExportProducts = [];
 
         // Generate export products HTML
@@ -864,37 +680,37 @@
 
         // Render export products
         allExportProducts.forEach((product, index) => {
-            const delay = (index % 12) * 100;
             const productHTML = `
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-3 events-block ${product.category}">
-                    <div class="wow fadeInUp animated" 
-                         data-wow-delay="${delay}ms" 
-                         data-wow-duration="1500ms">
-                        <div class="product-card-export">
-                            <h4 class="product-name-export">${product.name}</h4>
-                            <div class="product-category-badge-export">${categoryNames[product.category]}</div>
-                            <div class="product-availability-export">
-                                <i class="fas fa-shipping-fast"></i>
-                                <span>Ready for Export</span>
-                            </div>
-                        </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 events-block ${product.category}">
+                    <div class="product-card-export">
+                        <h4 class="product-name-export">${product.name}</h4>
+                        <div class="product-category-badge-export">${categoryNames[product.category]}</div>
                     </div>
                 </div>
             `;
             container.innerHTML += productHTML;
         });
 
+        // Hide all products initially
+        $('#export-products-container').hide();
+
         // Initialize Isotope for export products
         var $exportGrid = $('#export-products-container').isotope({
             itemSelector: '.events-block',
             layoutMode: 'fitRows',
-            percentPosition: true
+            percentPosition: true,
+            transitionDuration: '0.3s'
         });
 
         // Filter buttons for export products
         $('#export-filter-buttons button').on('click', function() {
             var filterValue = $(this).attr('data-filter');
-            $exportGrid.isotope({ filter: filterValue });
+            
+            // Hide empty state and show products container
+            $('#empty-state').fadeOut(200);
+            $('#export-products-container').fadeIn(100, function() {
+                $exportGrid.isotope({ filter: filterValue });
+            });
             
             $('#export-filter-buttons button').removeClass('active');
             $(this).addClass('active');
@@ -902,7 +718,7 @@
 
         // Reinitialize WOW after filtering
         $exportGrid.on('arrangeComplete', function() {
-            new WOW().init();
+            // Smooth transition complete
         });
     </script>
 </body>

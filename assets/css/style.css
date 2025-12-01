@@ -2106,6 +2106,7 @@ button.ltr {
 .main-footer .about-widget .info li a{
   display: inline-block;
   color: #fff;
+  /* text-transform: capitalize; */
 }
 
 .main-footer .about-widget .info li a:hover{
