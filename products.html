@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
 
     <title>3M Chemicals Group - Products</title>
 
@@ -13,10 +15,13 @@
 
     <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Stylesheets -->
     <link href="assets/css/font-awesome-all.css" rel="stylesheet" />
@@ -27,7 +32,11 @@
     <link href="assets/css/animate.css" rel="stylesheet" />
     <link href="assets/css/nice-select.css" rel="stylesheet" />
     <link href="assets/css/elpath.css" rel="stylesheet" />
-    <link href="assets/css/color/theme-color.css" id="jssDefault" rel="stylesheet" />
+    <link
+      href="assets/css/color/theme-color.css"
+      id="jssDefault"
+      rel="stylesheet"
+    />
     <link href="assets/css/switcher-style.css" rel="stylesheet" />
     <link href="assets/css/odometer.css" rel="stylesheet" />
     <link href="assets/css/rtl.css" rel="stylesheet" />
@@ -38,428 +47,480 @@
     <link href="assets/css/responsive.css" rel="stylesheet" />
 
     <style>
-        .filter-tabs {
-            margin-bottom: 50px;
-            text-align: center;
-        }
+      .filter-tabs {
+        margin-bottom: 50px;
+        text-align: center;
+      }
 
+      .filter-tabs ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .filter-tabs ul li {
+        display: inline-block;
+      }
+
+      .filter-tabs ul li button {
+        padding: 12px 25px;
+        background: #f5f5f5;
+        border: 2px solid transparent;
+        color: #333;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        font-family: "Inter", sans-serif;
+      }
+
+      .filter-tabs ul li button:hover {
+        background: #f4ffec;
+        border-color: #74b33f;
+        color: #74b33f;
+      }
+
+      .filter-tabs ul li button.active {
+        background: linear-gradient(to right, #74b33f, #74b33f);
+        color: #fff;
+        border-color: #74b33f;
+      }
+
+      /* Product Card Styles - No Images */
+      .product-card-no-image {
+        background: #fff;
+        border-radius: 10px;
+        padding: 35px 25px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .product-card-no-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #74b33f, #5a9230);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .product-card-no-image:hover::before {
+        transform: scaleX(1);
+      }
+
+      .product-card-no-image:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        border-color: #74b33f;
+      }
+
+      .product-name-main {
+        font-size: 1.3em;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 15px;
+        line-height: 1.4;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .product-category-badge {
+        display: inline-block;
+        padding: 8px 18px;
+        background: #f0f8eb;
+        color: #74b33f;
+        border-radius: 20px;
+        font-size: 0.85em;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .product-availability {
+        color: #666;
+        font-size: 0.9em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .product-availability i {
+        color: #74b33f;
+        font-size: 1.1em;
+      }
+
+      .events-block {
+        margin-bottom: 30px;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      /* Empty State Message */
+      .empty-state-message {
+        text-align: center;
+        padding: 100px 20px;
+        width: 100%;
+      }
+
+      .empty-state-message i {
+        font-size: 80px;
+        color: #74b33f;
+        margin-bottom: 30px;
+        opacity: 0.3;
+      }
+
+      .empty-state-message h3 {
+        font-size: 28px;
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .empty-state-message p {
+        font-size: 16px;
+        color: #666;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 768px) {
         .filter-tabs ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .filter-tabs ul li {
-            display: inline-block;
+          flex-direction: column;
         }
 
         .filter-tabs ul li button {
-            padding: 12px 25px;
-            background: #f5f5f5;
-            border: 2px solid transparent;
-            color: #333;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .filter-tabs ul li button:hover {
-            background: #f4ffec;
-            border-color: #74B33F;
-            color: #74B33F;
-        }
-
-        .filter-tabs ul li button.active {
-            background: linear-gradient(to right, #74B33F, #74B33F);
-            color: #fff;
-            border-color: #74B33F;
-        }
-
-        /* Product Card Styles - No Images */
-        .product-card-no-image {
-            background: #fff;
-            border-radius: 10px;
-            padding: 35px 25px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-            min-height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .product-card-no-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #74B33F, #5a9230);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .product-card-no-image:hover::before {
-            transform: scaleX(1);
-        }
-
-        .product-card-no-image:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-            border-color: #74B33F;
-        }
-
-        .product-name-main {
-            font-size: 1.3em;
-            font-weight: 700;
-            color: #222;
-            margin-bottom: 15px;
-            line-height: 1.4;
-            min-height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .product-category-badge {
-            display: inline-block;
-            padding: 8px 18px;
-            background: #f0f8eb;
-            color: #74B33F;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .product-availability {
-            color: #666;
-            font-size: 0.9em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .product-availability i {
-            color: #74B33F;
-            font-size: 1.1em;
-        }
-
-        .events-block {
-            margin-bottom: 30px;
-        }
-
-        .hidden {
-            display: none !important;
-        }
-
-        /* Empty State Message */
-        .empty-state-message {
-            text-align: center;
-            padding: 100px 20px;
-            width: 100%;
-        }
-
-        .empty-state-message i {
-            font-size: 80px;
-            color: #74B33F;
-            margin-bottom: 30px;
-            opacity: 0.3;
+          width: 100%;
+          max-width: 300px;
         }
 
         .empty-state-message h3 {
-            font-size: 28px;
-            color: #333;
-            font-weight: 600;
-            margin-bottom: 15px;
+          font-size: 22px;
         }
 
-        .empty-state-message p {
-            font-size: 16px;
-            color: #666;
-            max-width: 500px;
-            margin: 0 auto;
+        .empty-state-message i {
+          font-size: 60px;
         }
-
-        @media (max-width: 768px) {
-            .filter-tabs ul {
-                flex-direction: column;
-            }
-
-            .filter-tabs ul li button {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .empty-state-message h3 {
-                font-size: 22px;
-            }
-
-            .empty-state-message i {
-                font-size: 60px;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="boxed_wrapper ltr">
-        <!-- preloader -->
-        <div class="loader-wrap">
-            <div class="preloader">
-                <div id="handle-preloader" class="handle-preloader">
-                    <div class="animation-preloader">
-                        <div class="spinner"></div>
-                        <img src="assets/images/logo-2.png" alt="logo" />
-                    </div>
-                </div>
+      <!-- preloader -->
+      <div class="loader-wrap">
+        <div class="preloader">
+          <div id="handle-preloader" class="handle-preloader">
+            <div class="animation-preloader">
+              <div class="spinner"></div>
+              <img src="assets/images/logo-2.png" alt="logo" />
             </div>
+          </div>
         </div>
+      </div>
 
-        <!-- main header -->
-        <header class="main-header header-style-three">
-            <div class="header-lower">
-                <div class="auto-container">
-                    <div class="outer-box">
-                        <div class="logo-box">
-                            <figure class="logo">
-                                <a href="index.html"><img src="assets/images/logo-3.png" alt="" /></a>
-                            </figure>
-                        </div>
-                        <div class="menu-area">
-                            <div class="mobile-nav-toggler">
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
-                            </div>
-                            <nav class="main-menu navbar-expand-md navbar-light clearfix">
-                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                    <ul class="navigation clearfix">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li class="current"><a href="products.html">Products</a></li>
-                                        <li><a href="export.html">Export</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
+      <!-- main header -->
+      <header class="main-header header-style-three">
+        <div class="header-lower">
+          <div class="auto-container">
+            <div class="outer-box">
+              <div class="logo-box">
+                <figure class="logo">
+                  <a href="index.html"
+                    ><img src="assets/images/logo-3.png" alt=""
+                  /></a>
+                </figure>
+              </div>
+              <div class="menu-area">
+                <div class="mobile-nav-toggler">
+                  <i class="icon-bar"></i>
+                  <i class="icon-bar"></i>
+                  <i class="icon-bar"></i>
                 </div>
-            </div>
-
-            <div class="sticky-header">
-                <div class="auto-container">
-                    <div class="outer-box">
-                        <div class="logo-box">
-                            <figure class="logo">
-                                <a href="index.html"><img src="assets/images/logo.png" alt="" /></a>
-                            </figure>
-                        </div>
-                        <div class="menu-area">
-                            <nav class="main-menu clearfix"></nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Mobile Menu -->
-        <div class="mobile-menu">
-            <div class="menu-backdrop"></div>
-            <div class="close-btn"><i class="fas fa-times"></i></div>
-            <nav class="menu-box">
-                <div class="nav-logo">
-                    <a href="index.html"><img src="assets/images/logo-2.png" alt="" /></a>
-                </div>
-                <div class="menu-outer"></div>
-                <div class="contact-info">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li>Tanta - Elgharbia, Egypt</li>
-                        <li><a href="tel:+2001060056101">+20 010 600 56 101</a></li>
-                        <li><a href="mailto:Sales@3m-chem.com">Sales@3m-chem.com</a></li>
+                <nav class="main-menu navbar-expand-md navbar-light clearfix">
+                  <div
+                    class="collapse navbar-collapse show clearfix"
+                    id="navbarSupportedContent"
+                  >
+                    <ul class="navigation clearfix">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="about.html">About Us</a></li>
+                      <li class="current">
+                        <a href="products.html">Products</a>
+                      </li>
+                      <li><a href="export.html">Export</a></li>
+                      <li><a href="news.html">News</a></li>
+                      <li><a href="certificates.html">Certificates</a></li>
+                      <li><a href="contact.html">Contact</a></li>
                     </ul>
-                </div>
-            </nav>
-        </div>
-
-        <!-- main-content -->
-        <main class="main-content alternat-2">
-            <!-- page-title -->
-            <section class="page-title centred">
-                <div class="bg-layer" style="background-image: url(assets/images/background/page-title-3.jpg);"></div>
-                <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-53.png)"></div>
-                <div class="auto-container">
-                    <div class="content-box">
-                        <h2>Products</h2>
-                        <ul class="bread-crumb">
-                            <li><a href="index.html">Home</a></li>
-                            <li>-</li>
-                            <li>Products</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- products section -->
-            <section class="events-section events-page-section pt_120">
-                <div class="auto-container">
-                    <div class="sec-title mb_70 centred sec-title-animation animation-style2">
-                        <span class="sub-title mb_20 title-animation">Products</span>
-                        <h2 class="title-animation">Our Products</h2>
-                    </div>
-
-                    <!-- Filter Tabs -->
-                    <div class="filter-tabs">
-                        <ul id="filter-buttons">
-                            <li><button data-filter=".alcohols">Alcohols</button></li>
-                            <li><button data-filter=".glycol-ethers">Glycol Ethers</button></li>
-                            <li><button data-filter=".glycols">Glycols</button></li>
-                            <li><button data-filter=".ketones">Ketones</button></li>
-                            <li><button data-filter=".esters">Esters</button></li>
-                            <li><button data-filter=".chlorinated">Chlorinated Solvents</button></li>
-                            <li><button data-filter=".plasticizers">Plasticizers</button></li>
-                            <li><button data-filter=".acrylics">Acrylics</button></li>
-                            <li><button data-filter=".amines">Amines</button></li>
-                            <li><button data-filter=".monomers">Monomers</button></li>
-                            <li><button data-filter=".hydrocarbons">Hydrocarbons</button></li>
-                            <li><button data-filter=".acids">Acids</button></li>
-                            <li><button data-filter=".polymers">Polymers</button></li>
-                            <li><button data-filter=".other">Other Chemicals</button></li>
-                        </ul>
-                    </div>
-
-                    <!-- Empty State Message -->
-                    <div id="empty-state" class="empty-state-message">
-                        <i class="fas fa-flask"></i>
-                        <h3>Select a Category</h3>
-                        <p>Please choose a product category from the options above to view our chemical products</p>
-                    </div>
-
-                    <div class="row clearfix" id="products-container"></div>
-                </div>
-            </section>
-
-            <!-- cta section -->
-            <section class="cta-style-two">
-                <div class="auto-container">
-                    <div class="inner-container">
-                        <div id="particles-js"></div>
-                        <div class="content-box">
-                            <h2>
-                                Discover high-quality chemicals tailored <br />
-                                for your industry. Shop now!
-                            </h2>
-                            <div class="btn-box">
-                                <a href="contact.html" class="theme-btn btn-one">Get in Touch<span></span><span></span><span></span><span></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- footer -->
-        <footer class="main-footer alternat-2">
-            <div class="bg-layer" style="background-image: url(assets/images/background/footer-bg.jpg)"></div>
-            <div class="auto-container footer-top">
-                <div class="widget-section">
-                    <div class="row clearfix">
-                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget about-widget">
-                                <div class="widget-title">
-                                    <h3>About 3M</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <p>
-                                        Established in 2023 in Tanta, Egypt, 3M has rapidly
-                                        emerged as a trusted name in specialty chemicals.
-                                        Specializing in petrochemicals, paints, pharmaceuticals,
-                                        advanced materials, and custom chemical solutions, we
-                                        combine cutting-edge R&D with world-class manufacturing to
-                                        deliver innovative, reliable products and services to
-                                        customers across the globe.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget ml_80">
-                                <div class="widget-title">
-                                    <h3>Quick Link</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="about.html">About Company</a></li>
-                                        <li><a href="export.html">Export</a></li>
-                                        <li><a href="products.html">Products</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget about-widget">
-                                <div class="widget-title">
-                                    <h3>Our Emails</h3>
-                                </div>
-                                <ul class="info clearfix">
-                                    <li>
-                                        <a href="mailto:Sales@3m-chem.com">Sales@3m-chem.com</a>
-                                    </li>
-                                    <li>
-                                        <a href="mailto:import@3m-chem.com">Import@3m-chem.com</a>
-                                    </li>
-                                    <li>
-                                        <a href="mailto:export@3m-chem.com">Export@3m-chem.com</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <div class="bottom-inner">
-                        <div class="copyright">
-                            <p>
-                                Copyright &copy; 2025 <a href="index.html">3M</a>, Inc. All
-                                Rights Reserved
-                            </p>
-                        </div>
-                        <ul class="social-links">
-                  <li><h4>Follow Us On</h4></li>
-                  <li>
-                      <a href="https://www.facebook.com/profile.php?id=61579823973448" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                  </li>
-                  <li>
-                      <a href="https://www.linkedin.com/in/3m-chemicals-group-company-773b88399/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                  </li>
-                  <li>
-                      <a href="https://wa.me/message/4TPLWG6YEILBE1" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                  </li>
-              </ul>
-                    </div>
-                </div>
+                  </div>
+                </nav>
+              </div>
             </div>
-        </footer>
-
-        <div class="scroll-to-top">
-            <svg class="scroll-top-inner" viewBox="-1 -1 102 102">
-                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-            </svg>
+          </div>
         </div>
+
+        <div class="sticky-header">
+          <div class="auto-container">
+            <div class="outer-box">
+              <div class="logo-box">
+                <figure class="logo">
+                  <a href="index.html"
+                    ><img src="assets/images/logo.png" alt=""
+                  /></a>
+                </figure>
+              </div>
+              <div class="menu-area">
+                <nav class="main-menu clearfix"></nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn"><i class="fas fa-times"></i></div>
+        <nav class="menu-box">
+          <div class="nav-logo">
+            <a href="index.html"
+              ><img src="assets/images/logo-2.png" alt=""
+            /></a>
+          </div>
+          <div class="menu-outer"></div>
+          <div class="contact-info">
+            <h4>Contact Info</h4>
+            <ul>
+              <li>Tanta - Elgharbia, Egypt</li>
+              <li><a href="tel:+2001060056101">+20 010 600 56 101</a></li>
+              <li><a href="mailto:Sales@3m-chem.com">Sales@3m-chem.com</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <!-- main-content -->
+      <main class="main-content alternat-2">
+        <!-- page-title -->
+        <section class="page-title centred">
+          <div
+            class="bg-layer"
+            style="
+              background-image: url(assets/images/background/page-title-3.jpg);
+            "
+          ></div>
+          <div
+            class="pattern-layer"
+            style="background-image: url(assets/images/shape/shape-53.png)"
+          ></div>
+          <div class="auto-container">
+            <div class="content-box">
+              <h2>Products</h2>
+              <ul class="bread-crumb">
+                <li><a href="index.html">Home</a></li>
+                <li>-</li>
+                <li>Products</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- products section -->
+        <section class="events-section events-page-section pt_120">
+          <div class="auto-container">
+            <div
+              class="sec-title mb_70 centred sec-title-animation animation-style2"
+            >
+              <span class="sub-title mb_20 title-animation">Products</span>
+              <h2 class="title-animation">Our Products</h2>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+              <ul id="filter-buttons">
+                <li><button data-filter=".alcohols">Alcohols</button></li>
+                <li>
+                  <button data-filter=".glycol-ethers">Glycol Ethers</button>
+                </li>
+                <li><button data-filter=".glycols">Glycols</button></li>
+                <li><button data-filter=".ketones">Ketones</button></li>
+                <li><button data-filter=".esters">Esters</button></li>
+                <li>
+                  <button data-filter=".chlorinated">
+                    Chlorinated Solvents
+                  </button>
+                </li>
+                <li>
+                  <button data-filter=".plasticizers">Plasticizers</button>
+                </li>
+                <li><button data-filter=".acrylics">Acrylics</button></li>
+                <li><button data-filter=".amines">Amines</button></li>
+                <li><button data-filter=".monomers">Monomers</button></li>
+                <li>
+                  <button data-filter=".hydrocarbons">Hydrocarbons</button>
+                </li>
+                <li><button data-filter=".acids">Acids</button></li>
+                <li><button data-filter=".polymers">Polymers</button></li>
+                <li><button data-filter=".other">Other Chemicals</button></li>
+              </ul>
+            </div>
+
+            <!-- Empty State Message -->
+            <div id="empty-state" class="empty-state-message">
+              <i class="fas fa-flask"></i>
+              <h3>Select a Category</h3>
+              <p>
+                Please choose a product category from the options above to view
+                our chemical products
+              </p>
+            </div>
+
+            <div class="row clearfix" id="products-container"></div>
+          </div>
+        </section>
+
+        <!-- cta section -->
+        <section class="cta-style-two">
+          <div class="auto-container">
+            <div class="inner-container">
+              <div id="particles-js"></div>
+              <div class="content-box">
+                <h2>
+                  Discover high-quality chemicals tailored <br />
+                  for your industry. Shop now!
+                </h2>
+                <div class="btn-box">
+                  <a href="contact.html" class="theme-btn btn-one"
+                    >Get in Touch<span></span><span></span><span></span
+                    ><span></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- footer -->
+      <footer class="main-footer alternat-2">
+        <div
+          class="bg-layer"
+          style="background-image: url(assets/images/background/footer-bg.jpg)"
+        ></div>
+        <div class="auto-container footer-top">
+          <div class="widget-section">
+            <div class="row clearfix">
+              <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+                <div class="footer-widget about-widget">
+                  <div class="widget-title">
+                    <h3>About 3M</h3>
+                  </div>
+                  <div class="widget-content">
+                    <p>
+                      Established in 2023 in Tanta, Egypt, 3M has rapidly
+                      emerged as a trusted name in specialty chemicals.
+                      Specializing in petrochemicals, paints, pharmaceuticals,
+                      advanced materials, and custom chemical solutions, we
+                      combine cutting-edge R&D with world-class manufacturing to
+                      deliver innovative, reliable products and services to
+                      customers across the globe.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+                <div class="footer-widget links-widget ml_80">
+                  <div class="widget-title">
+                    <h3>Quick Link</h3>
+                  </div>
+                  <div class="widget-content">
+                    <ul class="links-list clearfix">
+                      <li><a href="about.html">About Company</a></li>
+                      <li><a href="export.html">Export</a></li>
+                      <li><a href="products.html">Products</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+                <div class="footer-widget about-widget">
+                  <div class="widget-title">
+                    <h3>Our Emails</h3>
+                  </div>
+                  <ul class="info clearfix">
+                    <li>
+                      <a href="mailto:Sales@3m-chem.com">Sales@3m-chem.com</a>
+                    </li>
+                    <li>
+                      <a href="mailto:import@3m-chem.com">Import@3m-chem.com</a>
+                    </li>
+                    <li>
+                      <a href="mailto:export@3m-chem.com">Export@3m-chem.com</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="bottom-inner">
+              <div class="copyright">
+                <p>
+                  Copyright &copy; 2025 <a href="index.html">3M</a>, Inc. All
+                  Rights Reserved
+                </p>
+              </div>
+              <ul class="social-links">
+                <li><h4>Follow Us On</h4></li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61579823973448"
+                    target="_blank"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/3m-chemicals-group-company-773b88399/"
+                    target="_blank"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://wa.me/message/4TPLWG6YEILBE1" target="_blank"
+                    ><i class="fab fa-whatsapp"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <div class="scroll-to-top">
+        <svg class="scroll-top-inner" viewBox="-1 -1 102 102">
+          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+      </div>
     </div>
 
     <!-- Scripts -->
@@ -485,144 +546,141 @@
     <script src="assets/js/script.js"></script>
 
     <script>
-        // Products data with categories
-        const productsData = {
-            alcohols: [
-                'Methanol',
-                'Mixed Ethanol',
-                'Isopropyl Alcohol',
-                'n-Butanol',
-                'iso-Butanol',
-                'Prop BH',
-                'Benzyl Alcohol',
-                'DiAcetone Alcohol',
-                '2EH'
-            ],
-            'glycol-ethers': [
-                'Butyl Glycol Ether',
-                'Methoxy Propanol',
-                'Methoxy Propyl Acetate'
-            ],
-            glycols: [
-                'Mono Ethylene Glycol',
-                'Di Ethylene Glycol',
-                'Triethylene Glycol (TEG)',
-                'Mono Propylene Glycol',
-                'Di Propylene Glycol',
-                'Tri Propylene Glycol (TPG)',
-                'Poly Ethylene Glycol PEG400',
-                'Poly Ethylene Glycol PEG600'
-            ],
-            ketones: [
-                'Acetone',
-                'Cyclohexanone',
-                'Methyl Ethyl Ketone',
-                'Di Methyl Carbonate'
-            ],
-            esters: [
-                'Ethyl Acetate',
-                'N-Butyl Acetate',
-                'Sec-Butyl Acetate',
-                'Methyl Acetate'
-            ],
-            chlorinated: [
-                'Ethylene Di Chloride',
-                'Methylene Chloride',
-                'Per Chloro Ethylene',
-                'Tri Chloro Ethylene'
-            ],
-            plasticizers: [
-                'Di Octyl Phthalate (DOP)',
-                'Diethyl Phthalate (DEP)',
-                'Phthalic Anhydride (PA)',
-                'Maleic Anhydride (MA)'
-            ],
-            acrylics: [
-                'Acrylic Resin',
-                'Ethyl Acrylate',
-                'Butyl Acrylate',
-                'Acrylic Acid',
-                'Methyl Methacrylate',
-                'Styrene Acrylic',
-                'Styrene Acrylic Copolymer'
-            ],
-            amines: [
-                'Diethanolamine',
-                'Monoethanolamine',
-                'Triethanolamine'
-            ],
-            monomers: [
-                'Vinyl Acetate Monomer (VAM)',
-                'Styrene Monomer',
-                'Vinyl Chloride Monomer'
-            ],
-            hydrocarbons: [
-                'Naphtha',
-                'Mixed Xylene',
-                'Solvent Naphtha 100',
-                'Solvent Naphtha 150',
-                'Benzol',
-                'Hexane',
-                'Toluene',
-                'White Spirit',
-                'Xylene BTX'
-            ],
-            other: [
-                'Glycerin',
-                'Soda Ash',
-                'Essential Oils',
-                'Tylose (HEC-HPMC)',
-                'Liquid Caustic Soda'
-            ],
-            acids: [
-                'Acetic Acid',
-                'Formic Acid'
-            ],
-            polymers: [
-                'Polyvinyl Alcohol',
-                'Polyvinyl Acetate',
-                'Tylose (HEC-HPMC)'
-            ]
-        };
+      // Products data with categories
+      const productsData = {
+        alcohols: [
+          "Methanol",
+          "Mixed Ethanol",
+          "Isopropyl Alcohol",
+          "n-Butanol",
+          "iso-Butanol",
+          "Prop BH",
+          "Benzyl Alcohol",
+          "DiAcetone Alcohol",
+          "2EH",
+        ],
+        "glycol-ethers": [
+          "Butyl Glycol Ether",
+          "Methoxy Propanol",
+          "Methoxy Propyl Acetate",
+        ],
+        glycols: [
+          "Mono Ethylene Glycol",
+          "Di Ethylene Glycol",
+          "Triethylene Glycol (TEG)",
+          "Mono Propylene Glycol",
+          "Di Propylene Glycol",
+          "Tri Propylene Glycol (TPG)",
+          "Poly Ethylene Glycol PEG400",
+          "Poly Ethylene Glycol PEG600",
+        ],
+        ketones: [
+          "Acetone",
+          "Cyclohexanone",
+          "Methyl Ethyl Ketone",
+          "Di Methyl Carbonate",
+        ],
+        esters: [
+          "Ethyl Acetate",
+          "N-Butyl Acetate",
+          "Sec-Butyl Acetate",
+          "Methyl Acetate",
+        ],
+        chlorinated: [
+          "Ethylene Di Chloride",
+          "Methylene Chloride",
+          "Per Chloro Ethylene",
+          "Tri Chloro Ethylene",
+        ],
+        plasticizers: [
+          "Di Octyl Phthalate (DOP)",
+          "Diethyl Phthalate (DEP)",
+          "Phthalic Anhydride (PA)",
+          "Maleic Anhydride (MA)",
+        ],
+        acrylics: [
+          "Acrylic Resin",
+          "Ethyl Acrylate",
+          "Butyl Acrylate",
+          "Acrylic Acid",
+          "Methyl Methacrylate",
+          "Styrene Acrylic",
+          "Styrene Acrylic Copolymer",
+        ],
+        amines: ["Diethanolamine", "Monoethanolamine", "Triethanolamine"],
+        monomers: [
+          "Vinyl Acetate Monomer (VAM)",
+          "Styrene Monomer",
+          "Vinyl Chloride Monomer",
+        ],
+        hydrocarbons: [
+          "Naphtha",
+          "Mixed Xylene",
+          "Solvent Naphtha 100",
+          "Solvent Naphtha 150",
+          "Benzol",
+          "Hexane",
+          "Toluene",
+          "White Spirit",
+          "Xylene BTX",
+        ],
+        other: [
+          "Glycerin",
+          "Soda Ash",
+          "Essential Oils",
+          "Tylose (HEC-HPMC)",
+          "Liquid Caustic Soda",
+        ],
+        acids: ["Acetic Acid", "Formic Acid"],
+        polymers: [
+          "Polyvinyl Alcohol",
+          "Polyvinyl Acetate",
+          "Tylose (HEC-HPMC)",
+        ],
+      };
 
-        const categoryNames = {
-            'alcohols': 'Alcohols',
-            'glycol-ethers': 'Glycol Ethers',
-            'glycols': 'Glycols',
-            'ketones': 'Ketones',
-            'esters': 'Esters',
-            'chlorinated': 'Chlorinated Solvents',
-            'plasticizers': 'Plasticizers',
-            'acrylics': 'Acrylics',
-            'amines': 'Amines',
-            'monomers': 'Monomers',
-            'hydrocarbons': 'Hydrocarbons',
-            'acids': 'Acids',
-            'polymers': 'Polymers',
-            'other': 'Other Chemicals'
-        };
+      const categoryNames = {
+        alcohols: "Alcohols",
+        "glycol-ethers": "Glycol Ethers",
+        glycols: "Glycols",
+        ketones: "Ketones",
+        esters: "Esters",
+        chlorinated: "Chlorinated Solvents",
+        plasticizers: "Plasticizers",
+        acrylics: "Acrylics",
+        amines: "Amines",
+        monomers: "Monomers",
+        hydrocarbons: "Hydrocarbons",
+        acids: "Acids",
+        polymers: "Polymers",
+        other: "Other Chemicals",
+      };
 
-        const container = document.getElementById('products-container');
-        const emptyState = document.getElementById('empty-state');
-        let allProducts = [];
+      const container = document.getElementById("products-container");
+      const emptyState = document.getElementById("empty-state");
+      let allProducts = [];
 
-        // Generate products HTML
-        Object.keys(productsData).forEach(category => {
-            productsData[category].forEach(productName => {
-                allProducts.push({
-                    name: productName,
-                    category: category
-                });
-            });
+      // Generate products HTML
+      Object.keys(productsData).forEach((category) => {
+        productsData[category].forEach((productName) => {
+          allProducts.push({
+            name: productName,
+            category: category,
+          });
         });
+      });
 
-        // Render products
-        allProducts.forEach((product, index) => {
-            const productHTML = `
-                <div class="col-lg-4 col-md-6 col-sm-12 events-block ${product.category}">
+      // Render products
+      allProducts.forEach((product, index) => {
+        const productHTML = `
+                <div class="col-lg-4 col-md-6 col-sm-12 events-block ${
+                  product.category
+                }">
                     <div class="product-card-no-image">
                         <h3 class="product-name-main">${product.name}</h3>
-                        <div class="product-category-badge">${categoryNames[product.category]}</div>
+                        <div class="product-category-badge">${
+                          categoryNames[product.category]
+                        }</div>
                         <!-- <div class="product-availability">
                             <i class="fas fa-check-circle"></i>
                             <span>Available for Shipping</span>
@@ -630,39 +688,38 @@
                     </div>
                 </div>
             `;
-            container.innerHTML += productHTML;
+        container.innerHTML += productHTML;
+      });
+
+      // Hide all products initially
+      $("#products-container").hide();
+
+      // Initialize Isotope
+      var $grid = $("#products-container").isotope({
+        itemSelector: ".events-block",
+        layoutMode: "fitRows",
+        percentPosition: true,
+        transitionDuration: "0.3s",
+      });
+
+      // Filter buttons
+      $("#filter-buttons button").on("click", function () {
+        var filterValue = $(this).attr("data-filter");
+
+        // Hide empty state and show products container
+        $("#empty-state").fadeOut(200);
+        $("#products-container").fadeIn(300, function () {
+          $grid.isotope({ filter: filterValue });
         });
 
-        // Hide all products initially
-        $('#products-container').hide();
+        $("#filter-buttons button").removeClass("active");
+        $(this).addClass("active");
+      });
 
-        // Initialize Isotope
-        var $grid = $('#products-container').isotope({
-            itemSelector: '.events-block',
-            layoutMode: 'fitRows',
-            percentPosition: true,
-            transitionDuration: '0.3s'
-        });
-
-        // Filter buttons
-        $('#filter-buttons button').on('click', function() {
-            var filterValue = $(this).attr('data-filter');
-            
-            // Hide empty state and show products container
-            $('#empty-state').fadeOut(200);
-            $('#products-container').fadeIn(300, function() {
-                $grid.isotope({ filter: filterValue });
-            });
-            
-            $('#filter-buttons button').removeClass('active');
-            $(this).addClass('active');
-        });
-
-        // Smooth transition complete
-        $grid.on('arrangeComplete', function() {
-            // Transition complete
-        });
+      // Smooth transition complete
+      $grid.on("arrangeComplete", function () {
+        // Transition complete
+      });
     </script>
-</body>
-
+  </body>
 </html>
