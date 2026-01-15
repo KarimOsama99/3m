@@ -1,813 +1,750 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    />
 
-    <title>3M Chemicals Group - Export</title>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
-    <!-- Fav Icon -->
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+  <title>3M Chemicals Group - Export</title>
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Fav Icon -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
 
-    <!-- Stylesheets -->
-    <link href="assets/css/font-awesome-all.css" rel="stylesheet" />
-    <link href="assets/css/flaticon.css" rel="stylesheet" />
-    <link href="assets/css/owl.css" rel="stylesheet" />
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet" />
-    <link href="assets/css/animate.css" rel="stylesheet" />
-    <link href="assets/css/nice-select.css" rel="stylesheet" />
-    <link href="assets/css/elpath.css" rel="stylesheet" />
-    <link
-      href="assets/css/color/theme-color.css"
-      id="jssDefault"
-      rel="stylesheet"
-    />
-    <link href="assets/css/switcher-style.css" rel="stylesheet" />
-    <link href="assets/css/odometer.css" rel="stylesheet" />
-    <link href="assets/css/rtl.css" rel="stylesheet" />
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <link href="assets/css/module-css/page-title.css" rel="stylesheet" />
-    <link href="assets/css/module-css/about.css" rel="stylesheet" />
-    <link href="assets/css/module-css/funfact.css" rel="stylesheet" />
-    <link href="assets/css/module-css/feature.css" rel="stylesheet" />
-    <link href="assets/css/module-css/research.css" rel="stylesheet" />
-    <link href="assets/css/module-css/working.css" rel="stylesheet" />
-    <link href="assets/css/module-css/gallery.css" rel="stylesheet" />
-    <link href="assets/css/module-css/cta.css" rel="stylesheet" />
-    <link href="assets/css/responsive.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
 
-    <style>
-      .filter-tabs {
-        margin-bottom: 50px;
-        text-align: center;
-      }
+  <!-- Stylesheets -->
+  <link href="assets/css/font-awesome-all.css" rel="stylesheet" />
+  <link href="assets/css/flaticon.css" rel="stylesheet" />
+  <link href="assets/css/owl.css" rel="stylesheet" />
+  <link href="assets/css/bootstrap.css" rel="stylesheet" />
+  <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet" />
+  <link href="assets/css/animate.css" rel="stylesheet" />
+  <link href="assets/css/nice-select.css" rel="stylesheet" />
+  <link href="assets/css/elpath.css" rel="stylesheet" />
+  <link href="assets/css/color/theme-color.css" id="jssDefault" rel="stylesheet" />
+  <link href="assets/css/switcher-style.css" rel="stylesheet" />
+  <link href="assets/css/odometer.css" rel="stylesheet" />
+  <link href="assets/css/rtl.css" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/css/module-css/page-title.css" rel="stylesheet" />
+  <link href="assets/css/module-css/about.css" rel="stylesheet" />
+  <link href="assets/css/module-css/funfact.css" rel="stylesheet" />
+  <link href="assets/css/module-css/feature.css" rel="stylesheet" />
+  <link href="assets/css/module-css/research.css" rel="stylesheet" />
+  <link href="assets/css/module-css/working.css" rel="stylesheet" />
+  <link href="assets/css/module-css/gallery.css" rel="stylesheet" />
+  <link href="assets/css/module-css/cta.css" rel="stylesheet" />
+  <link href="assets/css/responsive.css" rel="stylesheet" />
 
+  <style>
+    .filter-tabs {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .filter-tabs ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .filter-tabs ul li {
+      display: inline-block;
+    }
+
+    .filter-tabs ul li button {
+      padding: 12px 25px;
+      background: #f5f5f5;
+      border: 2px solid transparent;
+      color: #333;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      font-family: "Inter", sans-serif;
+    }
+
+    .filter-tabs ul li button:hover {
+      background: #f4ffec;
+      border-color: #74b33f;
+      color: #74b33f;
+    }
+
+    .filter-tabs ul li button.active {
+      background: linear-gradient(to right, #74b33f, #74b33f);
+      color: #fff;
+      border-color: #74b33f;
+    }
+
+    /* Product Card Styles - No Images */
+    .product-card-export {
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .events-block {
+      margin-bottom: 30px;
+    }
+
+    .product-card-export::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #74b33f, #5a9230);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .product-card-export:hover::before {
+      transform: scaleX(1);
+    }
+
+    .product-card-export:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      border-color: #74b33f;
+    }
+
+    .product-name-export {
+      font-size: 1.15em;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 15px;
+      line-height: 1.4;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-category-badge-export {
+      display: inline-block;
+      padding: 6px 15px;
+      background: #f0f8eb;
+      color: #74b33f;
+      border-radius: 20px;
+      font-size: 0.8em;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .product-availability-export {
+      color: #666;
+      font-size: 0.85em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .product-availability-export i {
+      color: #74b33f;
+      font-size: 1em;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* Empty State Message */
+    .empty-state-message {
+      text-align: center;
+      padding: 100px 20px;
+      width: 100%;
+    }
+
+    .empty-state-message i {
+      font-size: 80px;
+      color: #74b33f;
+      margin-bottom: 30px;
+      opacity: 0.3;
+    }
+
+    .empty-state-message h3 {
+      font-size: 28px;
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .empty-state-message p {
+      font-size: 16px;
+      color: #666;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
       .filter-tabs ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-      }
-
-      .filter-tabs ul li {
-        display: inline-block;
+        flex-direction: column;
       }
 
       .filter-tabs ul li button {
-        padding: 12px 25px;
-        background: #f5f5f5;
-        border: 2px solid transparent;
-        color: #333;
-        font-size: 15px;
-        font-weight: 600;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-        font-family: "Inter", sans-serif;
-      }
-
-      .filter-tabs ul li button:hover {
-        background: #f4ffec;
-        border-color: #74b33f;
-        color: #74b33f;
-      }
-
-      .filter-tabs ul li button.active {
-        background: linear-gradient(to right, #74b33f, #74b33f);
-        color: #fff;
-        border-color: #74b33f;
-      }
-
-      /* Product Card Styles - No Images */
-      .product-card-export {
-        background: #fff;
-        border-radius: 10px;
-        padding: 30px 20px;
-        text-align: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        border: 2px solid transparent;
-        position: relative;
-        overflow: hidden;
-        min-height: 180px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .events-block {
-        margin-bottom: 30px;
-      }
-
-      .product-card-export::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
-        height: 4px;
-        background: linear-gradient(90deg, #74b33f, #5a9230);
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-      }
-
-      .product-card-export:hover::before {
-        transform: scaleX(1);
-      }
-
-      .product-card-export:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        border-color: #74b33f;
-      }
-
-      .product-name-export {
-        font-size: 1.15em;
-        font-weight: 700;
-        color: #222;
-        margin-bottom: 15px;
-        line-height: 1.4;
-        min-height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .product-category-badge-export {
-        display: inline-block;
-        padding: 6px 15px;
-        background: #f0f8eb;
-        color: #74b33f;
-        border-radius: 20px;
-        font-size: 0.8em;
-        font-weight: 600;
-        margin-bottom: 12px;
-      }
-
-      .product-availability-export {
-        color: #666;
-        font-size: 0.85em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-      }
-
-      .product-availability-export i {
-        color: #74b33f;
-        font-size: 1em;
-      }
-
-      .hidden {
-        display: none !important;
-      }
-
-      /* Empty State Message */
-      .empty-state-message {
-        text-align: center;
-        padding: 100px 20px;
-        width: 100%;
-      }
-
-      .empty-state-message i {
-        font-size: 80px;
-        color: #74b33f;
-        margin-bottom: 30px;
-        opacity: 0.3;
+        max-width: 300px;
       }
 
       .empty-state-message h3 {
-        font-size: 28px;
-        color: #333;
-        font-weight: 600;
-        margin-bottom: 15px;
+        font-size: 22px;
       }
 
-      .empty-state-message p {
-        font-size: 16px;
-        color: #666;
-        max-width: 500px;
-        margin: 0 auto;
+      .empty-state-message i {
+        font-size: 60px;
       }
+    }
+  </style>
+</head>
 
-      @media (max-width: 768px) {
-        .filter-tabs ul {
-          flex-direction: column;
-        }
+<body>
+  <div class="boxed_wrapper ltr">
+    <!-- preloader -->
+    <div class="loader-wrap">
+      <div class="preloader">
+        <div id="handle-preloader" class="handle-preloader">
+          <div class="animation-preloader">
+            <div class="spinner"></div>
+            <img src="assets/images/logo-2.png" alt="logo" />
+          </div>
+        </div>
+      </div>
+    </div>
 
-        .filter-tabs ul li button {
-          width: 100%;
-          max-width: 300px;
-        }
-
-        .empty-state-message h3 {
-          font-size: 22px;
-        }
-
-        .empty-state-message i {
-          font-size: 60px;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="boxed_wrapper ltr">
-      <!-- preloader -->
-      <div class="loader-wrap">
-        <div class="preloader">
-          <div id="handle-preloader" class="handle-preloader">
-            <div class="animation-preloader">
-              <div class="spinner"></div>
-              <img src="assets/images/logo-2.png" alt="logo" />
+    <!-- main header -->
+    <header class="main-header header-style-three">
+      <div class="header-lower">
+        <div class="auto-container">
+          <div class="outer-box">
+            <div class="logo-box">
+              <figure class="logo">
+                <a href="index.html"><img src="assets/images/logo-3.png" alt="" /></a>
+              </figure>
+            </div>
+            <div class="menu-area">
+              <div class="mobile-nav-toggler">
+                <i class="icon-bar"></i>
+                <i class="icon-bar"></i>
+                <i class="icon-bar"></i>
+              </div>
+              <nav class="main-menu navbar-expand-md navbar-light clearfix">
+                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                  <ul class="navigation clearfix">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li class="current"><a href="export.html">Export</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="certificates.html">Certificates</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+              </nav>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- main header -->
-      <header class="main-header header-style-three">
-        <div class="header-lower">
-          <div class="auto-container">
-            <div class="outer-box">
-              <div class="logo-box">
-                <figure class="logo">
-                  <a href="index.html"
-                    ><img src="assets/images/logo-3.png" alt=""
-                  /></a>
-                </figure>
-              </div>
-              <div class="menu-area">
-                <div class="mobile-nav-toggler">
-                  <i class="icon-bar"></i>
-                  <i class="icon-bar"></i>
-                  <i class="icon-bar"></i>
+      <div class="sticky-header">
+        <div class="auto-container">
+          <div class="outer-box">
+            <div class="logo-box">
+              <figure class="logo">
+                <a href="index.html"><img src="assets/images/logo.png" alt="" /></a>
+              </figure>
+            </div>
+            <div class="menu-area">
+              <nav class="main-menu clearfix"></nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <div class="menu-backdrop"></div>
+      <div class="close-btn"><i class="fas fa-times"></i></div>
+      <nav class="menu-box">
+        <div class="nav-logo">
+          <a href="index.html"><img src="assets/images/logo-2.png" alt="" /></a>
+        </div>
+        <div class="menu-outer"></div>
+        <div class="contact-info">
+          <h4>Contact Info</h4>
+          <ul>
+            <li>Tanta - Elgharbia, Egypt</li>
+            <li><a href="tel:+2001060056101">+20 010 600 56 101</a></li>
+            <li>
+              <a href="mailto:Export@3m-chem.com">Export@3m-chem.com</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- main-content -->
+    <main class="main-content alternat-2">
+      <!-- page-title -->
+      <section class="page-title centred">
+        <div class="bg-layer" style="
+              background-image: url(assets/images/background/page-title.jpg);
+            "></div>
+        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-53.png)"></div>
+        <div class="auto-container">
+          <div class="content-box">
+            <h2>Export</h2>
+            <ul class="bread-crumb">
+              <li><a href="index.html">Home</a></li>
+              <li>-</li>
+              <li>Export</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- about-style-three -->
+      <section class="about-style-three pt_120 pb_120">
+        <div class="auto-container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+              <div class="image_block_two">
+                <div class="image-inner mr_30 pr_120">
+                  <figure class="image">
+                    <img src="assets/images/ch/export.jfif" alt="" />
+                  </figure>
                 </div>
-                <nav class="main-menu navbar-expand-md navbar-light clearfix">
-                  <div
-                    class="collapse navbar-collapse show clearfix"
-                    id="navbarSupportedContent"
-                  >
-                    <ul class="navigation clearfix">
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="about.html">About Us</a></li>
-                      <li><a href="products.html">Products</a></li>
-                      <li class="current"><a href="export.html">Export</a></li>
-                      <li><a href="news.html">News</a></li>
-                      <li><a href="certificates.html">Certificates</a></li>
-                      <li><a href="contact.html">Contact</a></li>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+              <div class="content_block_one">
+                <div class="content-box ml_30 sec-title-animation animation-style2">
+                  <div class="sec-title mb_25">
+                    <span class="sub-title mb_20 title-animation">Exportation</span>
+                    <h2 class="title-animation">3M Chemicals Group</h2>
+                  </div>
+                  <div class="text-box mb_45">
+                    <p>
+                      has established a formidable presence in international
+                      markets, underscoring our role as a global leader in the
+                      chemical sector:
+                    </p>
+                    <ul class="list-style-one clearfix">
+                      <li>
+                        <span class="text-primary">International Markets:</span>
+                        Our strategic expansion has enabled us to serve
+                        clients across Africa and Europe, offering tailored
+                        solutions to meet regional needs
+                      </li>
+                      <li>
+                        <span class="text-primary">Global Export Leadership:</span>
+                        Leveraging our extensive network and expertise, we
+                        ensure seamless export operations and meet the highest
+                        international standards
+                      </li>
                     </ul>
                   </div>
-                </nav>
+                  <div class="btn-box">
+                    <a href="contact.html" class="theme-btn">Get in
+                      Touch<span></span><span></span><span></span><span></span></a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="sticky-header">
-          <div class="auto-container">
-            <div class="outer-box">
-              <div class="logo-box">
-                <figure class="logo">
-                  <a href="index.html"
-                    ><img src="assets/images/logo.png" alt=""
-                  /></a>
-                </figure>
+      <!-- funfact-style-two -->
+      <section class="funfact-style-two pt_130 pb_120 mb_90">
+        <div class="bg-layer parallax-bg" data-parallax='{"y": 100}' style="
+              background-image: url(assets/images/background/funfact-bg-2.jpg);
+            "></div>
+        <div class="pattern-layer">
+          <div class="pattern-1" style="background-image: url(assets/images/shape/shape-28.png)"></div>
+          <div class="pattern-2" style="background-image: url(assets/images/shape/shape-29.png)"></div>
+        </div>
+        <div class="auto-container">
+          <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 funfact-block">
+              <div class="funfact-block-one">
+                <div class="inner-box">
+                  <div class="icon-box"><i class="fal fa-globe"></i></div>
+                  <div class="count-outer count-box">
+                    <span class="odometer" data-count="25">00</span><span>+</span>
+                  </div>
+                  <p>Exportation Countries</p>
+                </div>
               </div>
-              <div class="menu-area">
-                <nav class="main-menu clearfix"></nav>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 funfact-block">
+              <div class="funfact-block-one">
+                <div class="inner-box">
+                  <div class="icon-box"><i class="icon-10"></i></div>
+                  <div class="count-outer count-box">
+                    <span class="odometer" data-count="50">00</span><span>+</span>
+                  </div>
+                  <p>Our Products</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 funfact-block">
+              <div class="funfact-block-one">
+                <div class="inner-box">
+                  <div class="icon-box"><i class="icon-11"></i></div>
+                  <div class="count-outer count-box">
+                    <span class="odometer" data-count="99">00</span><span>%</span>
+                  </div>
+                  <p>Products Quality</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </header>
+      </section>
+      <!-- funfact-style-two end -->
 
-      <!-- Mobile Menu -->
-      <div class="mobile-menu">
-        <div class="menu-backdrop"></div>
-        <div class="close-btn"><i class="fas fa-times"></i></div>
-        <nav class="menu-box">
-          <div class="nav-logo">
-            <a href="index.html"
-              ><img src="assets/images/logo-2.png" alt=""
-            /></a>
+      <!-- Main Exporting Products Section -->
+      <section class="events-section events-page-section pb_120">
+        <div class="auto-container">
+          <div class="sec-title mb_70 centred sec-title-animation animation-style2">
+            <span class="sub-title mb_20 title-animation">Our Main Products</span>
+            <h2 class="title-animation">Main Exporting Products</h2>
           </div>
-          <div class="menu-outer"></div>
-          <div class="contact-info">
-            <h4>Contact Info</h4>
-            <ul>
-              <li>Tanta - Elgharbia, Egypt</li>
-              <li><a href="tel:+2001060056101">+20 010 600 56 101</a></li>
+
+          <!-- Filter Tabs -->
+          <div class="filter-tabs">
+            <ul id="export-filter-buttons">
+              <li><button data-filter=".oil-gas">Oil & Gas Field</button></li>
               <li>
-                <a href="mailto:Export@3m-chem.com">Export@3m-chem.com</a>
+                <button data-filter=".soap-detergents">
+                  Soap & Detergents
+                </button>
+              </li>
+              <li>
+                <button data-filter=".paints-lacquers">
+                  Paints & Lacquers
+                </button>
+              </li>
+              <li>
+                <button data-filter=".printing-inks">
+                  Printing Inks & Packaging
+                </button>
+              </li>
+              <li>
+                <button data-filter=".agriculture">
+                  Chemical Agriculture & Fertilizers
+                </button>
+              </li>
+              <li>
+                <button data-filter=".water-treatment">
+                  Water Treatment
+                </button>
               </li>
             </ul>
           </div>
-        </nav>
-      </div>
 
-      <!-- main-content -->
-      <main class="main-content alternat-2">
-        <!-- page-title -->
-        <section class="page-title centred">
-          <div
-            class="bg-layer"
-            style="
-              background-image: url(assets/images/background/page-title.jpg);
-            "
-          ></div>
-          <div
-            class="pattern-layer"
-            style="background-image: url(assets/images/shape/shape-53.png)"
-          ></div>
-          <div class="auto-container">
+          <!-- Empty State Message -->
+          <div id="empty-state" class="empty-state-message">
+            <i class="fas fa-layer-group"></i>
+            <h3>Select a Category</h3>
+            <p>
+              Please choose a product category from the options above to view
+              our export products
+            </p>
+          </div>
+
+          <div class="row clearfix" id="export-products-container"></div>
+        </div>
+      </section>
+
+      <!-- cta section -->
+      <section class="cta-style-two">
+        <div class="auto-container">
+          <div class="inner-container">
+            <div id="particles-js"></div>
             <div class="content-box">
-              <h2>Export</h2>
-              <ul class="bread-crumb">
-                <li><a href="index.html">Home</a></li>
-                <li>-</li>
-                <li>Export</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <!-- about-style-three -->
-        <section class="about-style-three pt_120 pb_120">
-          <div class="auto-container">
-            <div class="row align-items-center">
-              <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                <div class="image_block_two">
-                  <div class="image-inner mr_30 pr_120">
-                    <figure class="image">
-                      <img src="assets/images/ch/export.jfif" alt="" />
-                    </figure>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                <div class="content_block_one">
-                  <div
-                    class="content-box ml_30 sec-title-animation animation-style2"
-                  >
-                    <div class="sec-title mb_25">
-                      <span class="sub-title mb_20 title-animation"
-                        >Exportation</span
-                      >
-                      <h2 class="title-animation">3M Chemicals Group</h2>
-                    </div>
-                    <div class="text-box mb_45 title-animation">
-                      <p>
-                        has established a formidable presence in international
-                        markets, underscoring our role as a global leader in the
-                        chemical sector:
-                      </p>
-                      <ul class="list-style-one clearfix">
-                        <li>
-                          <span class="text-primary"
-                            >International Markets:</span
-                          >
-                          Our strategic expansion has enabled us to serve
-                          clients across Africa and Europe, offering tailored
-                          solutions to meet regional needs
-                        </li>
-                        <li>
-                          <span class="text-primary"
-                            >Global Export Leadership:</span
-                          >
-                          Leveraging our extensive network and expertise, we
-                          ensure seamless export operations and meet the highest
-                          international standards
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="btn-box">
-                      <a href="contact.html" class="theme-btn"
-                        >Get in Touch<span></span><span></span><span></span
-                        ><span></span
-                      ></a>
-                    </div>
-                  </div>
-                </div>
+              <h2>
+                Expert scientists conducting <br />precise product testing
+              </h2>
+              <div class="btn-box">
+                <a href="contact.html" class="theme-btn btn-one">Get in
+                  Touch<span></span><span></span><span></span><span></span></a>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
+    </main>
 
-        <!-- funfact-style-two -->
-        <section class="funfact-style-two pt_130 pb_120 mb_90">
-          <div
-            class="bg-layer parallax-bg"
-            data-parallax='{"y": 100}'
-            style="
-              background-image: url(assets/images/background/funfact-bg-2.jpg);
-            "
-          ></div>
-          <div class="pattern-layer">
-            <div
-              class="pattern-1"
-              style="background-image: url(assets/images/shape/shape-28.png)"
-            ></div>
-            <div
-              class="pattern-2"
-              style="background-image: url(assets/images/shape/shape-29.png)"
-            ></div>
-          </div>
-          <div class="auto-container">
-            <div class="row clearfix">
-              <div class="col-lg-4 col-md-6 col-sm-12 funfact-block">
-                <div class="funfact-block-one">
-                  <div class="inner-box">
-                    <div class="icon-box"><i class="fal fa-globe"></i></div>
-                    <div class="count-outer count-box">
-                      <span class="odometer" data-count="25">00</span
-                      ><span>+</span>
-                    </div>
-                    <p>Exportation Countries</p>
-                  </div>
+    <!-- footer -->
+    <footer class="main-footer alternat-2">
+      <div class="bg-layer" style="background-image: url(assets/images/background/footer-bg.jpg)"></div>
+      <div class="auto-container footer-top">
+        <div class="widget-section">
+          <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget about-widget">
+                <div class="widget-title">
+                  <h3>About 3M</h3>
                 </div>
-              </div>
-              <div class="col-lg-4 col-md-6 col-sm-12 funfact-block">
-                <div class="funfact-block-one">
-                  <div class="inner-box">
-                    <div class="icon-box"><i class="icon-10"></i></div>
-                    <div class="count-outer count-box">
-                      <span class="odometer" data-count="50">00</span
-                      ><span>+</span>
-                    </div>
-                    <p>Our Products</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 col-sm-12 funfact-block">
-                <div class="funfact-block-one">
-                  <div class="inner-box">
-                    <div class="icon-box"><i class="icon-11"></i></div>
-                    <div class="count-outer count-box">
-                      <span class="odometer" data-count="99">00</span
-                      ><span>%</span>
-                    </div>
-                    <p>Products Quality</p>
-                  </div>
+                <div class="widget-content">
+                  <p>
+                    Established in 2023 in Tanta, Egypt, 3M has rapidly
+                    emerged as a trusted name in specialty chemicals.
+                    Specializing in petrochemicals, paints, pharmaceuticals,
+                    advanced materials, and custom chemical solutions, we
+                    combine cutting-edge R&D with world-class manufacturing to
+                    deliver innovative, reliable products and services to
+                    customers across the globe.
+                  </p>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-        <!-- funfact-style-two end -->
-
-        <!-- Main Exporting Products Section -->
-        <section class="events-section events-page-section pb_120">
-          <div class="auto-container">
-            <div
-              class="sec-title mb_70 centred sec-title-animation animation-style2"
-            >
-              <span class="sub-title mb_20 title-animation"
-                >Our Main Products</span
-              >
-              <h2 class="title-animation">Main Exporting Products</h2>
-            </div>
-
-            <!-- Filter Tabs -->
-            <div class="filter-tabs">
-              <ul id="export-filter-buttons">
-                <li><button data-filter=".oil-gas">Oil & Gas Field</button></li>
-                <li>
-                  <button data-filter=".soap-detergents">
-                    Soap & Detergents
-                  </button>
-                </li>
-                <li>
-                  <button data-filter=".paints-lacquers">
-                    Paints & Lacquers
-                  </button>
-                </li>
-                <li>
-                  <button data-filter=".printing-inks">
-                    Printing Inks & Packaging
-                  </button>
-                </li>
-                <li>
-                  <button data-filter=".agriculture">
-                    Chemical Agriculture & Fertilizers
-                  </button>
-                </li>
-                <li>
-                  <button data-filter=".water-treatment">
-                    Water Treatment
-                  </button>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Empty State Message -->
-            <div id="empty-state" class="empty-state-message">
-              <i class="fas fa-layer-group"></i>
-              <h3>Select a Category</h3>
-              <p>
-                Please choose a product category from the options above to view
-                our export products
-              </p>
-            </div>
-
-            <div class="row clearfix" id="export-products-container"></div>
-          </div>
-        </section>
-
-        <!-- cta section -->
-        <section class="cta-style-two">
-          <div class="auto-container">
-            <div class="inner-container">
-              <div id="particles-js"></div>
-              <div class="content-box">
-                <h2>
-                  Expert scientists conducting <br />precise product testing
-                </h2>
-                <div class="btn-box">
-                  <a href="contact.html" class="theme-btn btn-one"
-                    >Get in Touch<span></span><span></span><span></span
-                    ><span></span
-                  ></a>
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget links-widget ml_80">
+                <div class="widget-title">
+                  <h3>Quick Link</h3>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <!-- footer -->
-      <footer class="main-footer alternat-2">
-        <div
-          class="bg-layer"
-          style="background-image: url(assets/images/background/footer-bg.jpg)"
-        ></div>
-        <div class="auto-container footer-top">
-          <div class="widget-section">
-            <div class="row clearfix">
-              <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget about-widget">
-                  <div class="widget-title">
-                    <h3>About 3M</h3>
-                  </div>
-                  <div class="widget-content">
-                    <p>
-                      Established in 2023 in Tanta, Egypt, 3M has rapidly
-                      emerged as a trusted name in specialty chemicals.
-                      Specializing in petrochemicals, paints, pharmaceuticals,
-                      advanced materials, and custom chemical solutions, we
-                      combine cutting-edge R&D with world-class manufacturing to
-                      deliver innovative, reliable products and services to
-                      customers across the globe.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget links-widget ml_80">
-                  <div class="widget-title">
-                    <h3>Quick Link</h3>
-                  </div>
-                  <div class="widget-content">
-                    <ul class="links-list clearfix">
-                      <li><a href="about.html">About Company</a></li>
-                      <li><a href="export.html">Export</a></li>
-                      <li><a href="products.html">Products</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget about-widget">
-                  <div class="widget-title">
-                    <h3>Our Emails</h3>
-                  </div>
-                  <ul class="info clearfix">
-                    <li>
-                      <a href="mailto:Sales@3m-chem.com">Sales@3m-chem.com</a>
-                    </li>
-                    <li>
-                      <a href="mailto:import@3m-chem.com">Import@3m-chem.com</a>
-                    </li>
-                    <li>
-                      <a href="mailto:export@3m-chem.com">Export@3m-chem.com</a>
-                    </li>
+                <div class="widget-content">
+                  <ul class="links-list clearfix">
+                    <li><a href="about.html">About Company</a></li>
+                    <li><a href="export.html">Export</a></li>
+                    <li><a href="products.html">Products</a></li>
                   </ul>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="footer-bottom">
-            <div class="bottom-inner">
-              <div class="copyright">
-                <p>
-                  Copyright &copy; 2025 <a href="index.html">3M</a>, Inc. All
-                  Rights Reserved
-                </p>
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+              <div class="footer-widget about-widget">
+                <div class="widget-title">
+                  <h3>Our Emails</h3>
+                </div>
+                <ul class="info clearfix">
+                  <li>
+                    <a href="mailto:Sales@3m-chem.com">Sales@3m-chem.com</a>
+                  </li>
+                  <li>
+                    <a href="mailto:import@3m-chem.com">Import@3m-chem.com</a>
+                  </li>
+                  <li>
+                    <a href="mailto:export@3m-chem.com">Export@3m-chem.com</a>
+                  </li>
+                </ul>
               </div>
-              <ul class="social-links">
-                <li><h4>Follow Us On</h4></li>
-                <li>
-                  <a
-                    href="https://www.facebook.com/profile.php?id=61579823973448"
-                    target="_blank"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/3m-chemicals-group-company-773b88399/"
-                    target="_blank"
-                    ><i class="fab fa-linkedin-in"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="https://wa.me/message/4TPLWG6YEILBE1" target="_blank"
-                    ><i class="fab fa-whatsapp"></i
-                  ></a>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
-      </footer>
-
-      <div class="scroll-to-top">
-        <svg class="scroll-top-inner" viewBox="-1 -1 102 102">
-          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
+        <div class="footer-bottom">
+          <div class="bottom-inner">
+            <div class="copyright">
+              <p>
+                Copyright &copy; 2025 <a href="index.html">3M</a>, Inc. All
+                Rights Reserved
+              </p>
+            </div>
+            <ul class="social-links">
+              <li>
+                <h4>Follow Us On</h4>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=61579823973448" target="_blank"><i
+                    class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/3m-chemicals-group-company-773b88399/" target="_blank"><i
+                    class="fab fa-linkedin-in"></i></a>
+              </li>
+              <li>
+                <a href="https://wa.me/message/4TPLWG6YEILBE1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
+    </footer>
+
+    <div class="scroll-to-top">
+      <svg class="scroll-top-inner" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
     </div>
+  </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/validation.js"></script>
-    <script src="assets/js/jquery.fancybox.js"></script>
-    <script src="assets/js/appear.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/parallax-scroll.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/jQuery.style.switcher.min.js"></script>
-    <script src="assets/js/language.js"></script>
-    <script src="assets/js/scrolltop.min.js"></script>
-    <script src="assets/js/gsap.js"></script>
-    <script src="assets/js/ScrollTrigger.js"></script>
-    <script src="assets/js/SplitText.js"></script>
-    <script src="assets/js/odometer.js"></script>
-    <script src="assets/js/particles.min.js"></script>
-    <script src="assets/js/particles-config.js"></script>
-    <script src="assets/js/script.js"></script>
+  <!-- Scripts -->
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/owl.js"></script>
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/jquery.fancybox.js"></script>
+  <script src="assets/js/appear.js"></script>
+  <script src="assets/js/isotope.js"></script>
+  <script src="assets/js/parallax-scroll.js"></script>
+  <script src="assets/js/jquery.nice-select.min.js"></script>
+  <script src="assets/js/jQuery.style.switcher.min.js"></script>
+  <script src="assets/js/language.js"></script>
+  <script src="assets/js/scrolltop.min.js"></script>
+  <script src="assets/js/gsap.js"></script>
+  <script src="assets/js/ScrollTrigger.js"></script>
+  <script src="assets/js/SplitText.js"></script>
+  <script src="assets/js/odometer.js"></script>
+  <script src="assets/js/particles.min.js"></script>
+  <script src="assets/js/particles-config.js"></script>
+  <script src="assets/js/script.js"></script>
 
-    <script>
-      // Export Products Data
-      const exportProductsData = {
-        "oil-gas": [
-          "Methanol",
-          "Mono Ethylene Glycol (MEG)",
-          "Di Ethylene Glycol (DEG)",
-          "Tri Ethylene Glycol (TEG)",
-          "Tri Ethanol Amine (MEA)",
-          "Caustic Soda Flakes / Liquid",
-          "Hydrochloric Acid 30-33% (HCL)",
-          "Chlorine Gas 99%",
-        ],
-        "soap-detergents": [
-          "Caustic Soda Flakes / Liquid",
-          "Potassium Hydroxide",
-          "Hydrochloric Acid 30-33% (HCL)",
-          "Sodium Hypochlorite 12%",
-          "Sodium Lauryl Ether Sulphate 70%",
-          "Hydroxy Propyl Methyl Cellulose (HPMC)",
-          "Sulphoric Acid 98%",
-          "Nitric Acid 68%",
-        ],
-        "paints-lacquers": [
-          "Butyl Glycol Ether",
-          "Mono Ethylene Glycol (MEG)",
-          "Di Ethylene Glycol (DEG)",
-          "Tri Ethylene Glycol (TEG)",
-          "Ethyl Acetate",
-          "N-Butyl Acetate",
-          "Xylene",
-          "White Spirit",
-          "Iso Propyl Alcohol (IPA)",
-          "N-Butanol",
-          "Iso-Butanol",
-          "Methanol",
-          "Styrene Monomer",
-          "Calcium Carbonate",
-        ],
-        "printing-inks": [
-          "Butyl Glycol Ether",
-          "Ethyl Acetate",
-          "Iso Propyl Alcohol (IPA)",
-          "N-Butanol",
-          "Iso-Butanol",
-          "Ethanol",
-        ],
-        agriculture: [
-          "Xylene",
-          "Cyclohexanone",
-          "White Spirit",
-          "Urea 46%",
-          "Phosphoric Acid 52%",
-          "Sulphoric Acid 98%",
-        ],
-        "water-treatment": [
-          "Caustic Soda Flakes / Liquid",
-          "Aluminum Sulphate Sold / Liquid",
-          "Tri Chloroiso Cyanuric Acid (TCCA) 90%",
-        ],
-      };
+  <script>
+    // Export Products Data
+    const exportProductsData = {
+      "oil-gas": [
+        "Methanol",
+        "Mono Ethylene Glycol (MEG)",
+        "Di Ethylene Glycol (DEG)",
+        "Tri Ethylene Glycol (TEG)",
+        "Tri Ethanol Amine (MEA)",
+        "Caustic Soda Flakes / Liquid",
+        "Hydrochloric Acid 30-33% (HCL)",
+        "Chlorine Gas 99%",
+      ],
+      "soap-detergents": [
+        "Caustic Soda Flakes / Liquid",
+        "Potassium Hydroxide",
+        "Hydrochloric Acid 30-33% (HCL)",
+        "Sodium Hypochlorite 12%",
+        "Sodium Lauryl Ether Sulphate 70%",
+        "Hydroxy Propyl Methyl Cellulose (HPMC)",
+        "Sulphoric Acid 98%",
+        "Nitric Acid 68%",
+      ],
+      "paints-lacquers": [
+        "Butyl Glycol Ether",
+        "Mono Ethylene Glycol (MEG)",
+        "Di Ethylene Glycol (DEG)",
+        "Tri Ethylene Glycol (TEG)",
+        "Ethyl Acetate",
+        "N-Butyl Acetate",
+        "Xylene",
+        "White Spirit",
+        "Iso Propyl Alcohol (IPA)",
+        "N-Butanol",
+        "Iso-Butanol",
+        "Methanol",
+        "Styrene Monomer",
+        "Calcium Carbonate",
+      ],
+      "printing-inks": [
+        "Butyl Glycol Ether",
+        "Ethyl Acetate",
+        "Iso Propyl Alcohol (IPA)",
+        "N-Butanol",
+        "Iso-Butanol",
+        "Ethanol",
+      ],
+      agriculture: [
+        "Xylene",
+        "Cyclohexanone",
+        "White Spirit",
+        "Urea 46%",
+        "Phosphoric Acid 52%",
+        "Sulphoric Acid 98%",
+      ],
+      "water-treatment": [
+        "Caustic Soda Flakes / Liquid",
+        "Aluminum Sulphate Sold / Liquid",
+        "Tri Chloroiso Cyanuric Acid (TCCA) 90%",
+      ],
+    };
 
-      const categoryNames = {
-        "oil-gas": "Oil & Gas Field",
-        "soap-detergents": "Soap & Detergents",
-        "paints-lacquers": "Paints & Lacquers",
-        "printing-inks": "Printing Inks & Packaging",
-        agriculture: "Chemical Agriculture & Fertilizers",
-        "water-treatment": "Water Treatment",
-      };
+    const categoryNames = {
+      "oil-gas": "Oil & Gas Field",
+      "soap-detergents": "Soap & Detergents",
+      "paints-lacquers": "Paints & Lacquers",
+      "printing-inks": "Printing Inks & Packaging",
+      agriculture: "Chemical Agriculture & Fertilizers",
+      "water-treatment": "Water Treatment",
+    };
 
-      const container = document.getElementById("export-products-container");
-      const emptyState = document.getElementById("empty-state");
-      let allExportProducts = [];
+    const container = document.getElementById("export-products-container");
+    const emptyState = document.getElementById("empty-state");
+    let allExportProducts = [];
 
-      // Generate export products HTML
-      Object.keys(exportProductsData).forEach((category) => {
-        exportProductsData[category].forEach((productName) => {
-          allExportProducts.push({
-            name: productName,
-            category: category,
-          });
+    // Generate export products HTML
+    Object.keys(exportProductsData).forEach((category) => {
+      exportProductsData[category].forEach((productName) => {
+        allExportProducts.push({
+          name: productName,
+          category: category,
         });
       });
+    });
 
-      // Render export products
-      allExportProducts.forEach((product, index) => {
-        const productHTML = `
-                <div class="col-lg-3 col-md-6 col-sm-12 events-block ${
-                  product.category
-                }">
+    // Render export products
+    allExportProducts.forEach((product, index) => {
+      const productHTML = `
+                <div class="col-lg-3 col-md-6 col-sm-12 events-block ${product.category
+        }">
                     <div class="product-card-export">
                         <h4 class="product-name-export">${product.name}</h4>
-                        <div class="product-category-badge-export">${
-                          categoryNames[product.category]
-                        }</div>
+                        <div class="product-category-badge-export">${categoryNames[product.category]
+        }</div>
                     </div>
                 </div>
             `;
-        container.innerHTML += productHTML;
+      container.innerHTML += productHTML;
+    });
+
+    // Hide all products initially
+    $("#export-products-container").hide();
+
+    // Initialize Isotope for export products
+    var $exportGrid = $("#export-products-container").isotope({
+      itemSelector: ".events-block",
+      layoutMode: "fitRows",
+      percentPosition: true,
+      transitionDuration: "0.3s",
+    });
+
+    // Filter buttons for export products
+    $("#export-filter-buttons button").on("click", function () {
+      var filterValue = $(this).attr("data-filter");
+
+      // Hide empty state and show products container
+      $("#empty-state").fadeOut(200);
+      $("#export-products-container").fadeIn(100, function () {
+        $exportGrid.isotope({ filter: filterValue });
       });
 
-      // Hide all products initially
-      $("#export-products-container").hide();
+      $("#export-filter-buttons button").removeClass("active");
+      $(this).addClass("active");
+    });
 
-      // Initialize Isotope for export products
-      var $exportGrid = $("#export-products-container").isotope({
-        itemSelector: ".events-block",
-        layoutMode: "fitRows",
-        percentPosition: true,
-        transitionDuration: "0.3s",
-      });
+    // Reinitialize WOW after filtering
+    $exportGrid.on("arrangeComplete", function () {
+      // Smooth transition complete
+    });
+  </script>
+</body>
 
-      // Filter buttons for export products
-      $("#export-filter-buttons button").on("click", function () {
-        var filterValue = $(this).attr("data-filter");
-
-        // Hide empty state and show products container
-        $("#empty-state").fadeOut(200);
-        $("#export-products-container").fadeIn(100, function () {
-          $exportGrid.isotope({ filter: filterValue });
-        });
-
-        $("#export-filter-buttons button").removeClass("active");
-        $(this).addClass("active");
-      });
-
-      // Reinitialize WOW after filtering
-      $exportGrid.on("arrangeComplete", function () {
-        // Smooth transition complete
-      });
-    </script>
-  </body>
 </html>
