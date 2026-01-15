@@ -437,7 +437,7 @@
           <!-- Filter Tabs -->
           <div class="filter-tabs">
             <ul id="export-filter-buttons">
-              <li><button data-filter=".oil-gas">Oil & Gas Field</button></li>
+              <li><button data-filter=".oil-gas" class="active">Oil & Gas Field</button></li>
               <li>
                 <button data-filter=".soap-detergents">
                   Soap & Detergents
@@ -466,15 +466,7 @@
             </ul>
           </div>
 
-          <!-- Empty State Message -->
-          <div id="empty-state" class="empty-state-message">
-            <i class="fas fa-layer-group"></i>
-            <h3>Select a Category</h3>
-            <p>
-              Please choose a product category from the options above to view
-              our export products
-            </p>
-          </div>
+
 
           <div class="row clearfix" id="export-products-container"></div>
         </div>
@@ -715,27 +707,20 @@
       container.innerHTML += productHTML;
     });
 
-    // Hide all products initially
-    $("#export-products-container").hide();
-
     // Initialize Isotope for export products
     var $exportGrid = $("#export-products-container").isotope({
       itemSelector: ".events-block",
       layoutMode: "fitRows",
       percentPosition: true,
       transitionDuration: "0.3s",
+      filter: ".oil-gas"
     });
 
     // Filter buttons for export products
+    // Filter buttons for export products
     $("#export-filter-buttons button").on("click", function () {
       var filterValue = $(this).attr("data-filter");
-
-      // Hide empty state and show products container
-      $("#empty-state").fadeOut(200);
-      $("#export-products-container").fadeIn(100, function () {
-        $exportGrid.isotope({ filter: filterValue });
-      });
-
+      $exportGrid.isotope({ filter: filterValue });
       $("#export-filter-buttons button").removeClass("active");
       $(this).addClass("active");
     });
